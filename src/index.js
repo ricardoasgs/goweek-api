@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, { pingTimeout: 30000 });
 
 const routes = require("./routes");
 
